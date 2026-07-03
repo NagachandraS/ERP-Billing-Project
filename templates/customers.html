@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers - Industrial Oil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background-color: #003366;
+            color: white;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 12px 25px;
+            background-color: #003366;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #0055a5;
+        }
+    </style>
+</head>
+<body>
+
+<header>Industrial Oil</header>
+
+<nav>
+    <a th:href="@{/home}">Home</a>
+   <a th:href="@{/customers}">Customer</a>
+    <a th:href="@{/products}">Products</a>
+    <a th:href="@{/billing}">Billing</a>
+    <a th:href="@{/viewInvoices}">View Invoices</a>
+</nav>
+
+<div class="content">
+    <h2>Customers</h2>
+    <div class="buttons">
+        <a th:href="@{/customers/add}">Add Customer</a>
+        <a th:href="@{/customers/view}">View Customers</a>
+    </div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+</html>

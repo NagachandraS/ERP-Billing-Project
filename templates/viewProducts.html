@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Products - Industrial Oil Billing</title>
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/viewProducts.css">
+</head>
+<body>
+
+<h1>All Products</h1>
+
+<div class="table-wrapper">
+    <table>
+        <thead>
+        <tr>
+            <!--     <th>Product ID</th> -->
+                 <th>Name</th>
+                 <th>Quantity</th>
+                 <th>Price</th>
+                 <th>Category</th>
+                 <th>Description</th>
+                 <th>Actions</th>
+             </tr>
+             </thead>
+             <tbody>
+             <tr th:each="product : ${products}">
+                 <!--    <td th:text="${product.productId}"></td> -->
+                    <td th:text="${product.productName}"></td>
+                    <td th:text="${product.productQuantity}"></td>
+                    <td th:text="${product.productPrice}"></td>
+                    <td th:text="${product.productCategoryType}"></td>
+                    <td th:text="${product.productDescription}"></td>
+                    <td>
+                        <button class="table-button" th:onclick="'window.location.href=\'/products/edit/' + ${product.productId} + '\''">Edit</button>
+                        <button class="table-button" th:onclick="|deleteProduct(${product.productId})|">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+    <div class="pagination">
+        <a th:if="${currentPage > 0}" th:href="@{'/products/view'(page=${currentPage - 1}, size=${pageSize})}">Previous</a>
+        <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+            <a th:href="@{'/products/view'(page=${i}, size=${pageSize})}" th:text="${i + 1}" th:classappend="${i == currentPage} ? 'active'"></a>
+        </span>
+        <a th:if="${currentPage + 1 < totalPages}" th:href="@{'/products/view'(page=${currentPage + 1}, size=${pageSize})}">Next</a>
+    </div>
+
+    <!-- Back button aligned left under table -->
+    <button class="back-button" onclick="window.location.href='/home'">Back</button>
+</div>
+
+<script src="/js/products.js"></script>
+<script src="/js/common.js"></script>
+</body>
+</html>

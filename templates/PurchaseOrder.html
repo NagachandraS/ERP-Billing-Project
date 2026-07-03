@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Order</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/PurchaseOrder.css">
+</head>
+<div class="purchase-container">
+    <header>Create Purchase Invoice</header>
+    <div class="upload-section">
+        <label for="invoicePdf">
+            Upload Indent / Invoice PDF:
+        </label>
+
+        <input type="file"
+               id="invoicePdf"
+               accept=".pdf"
+               hidden
+               onchange="fileHandle(this)">
+
+        <button type="button"
+                class="upload-btn"
+                onclick="document.getElementById('invoicePdf').click()">
+            Upload PDF
+        </button>
+
+        <span id="fileName" class="file-name">
+        No file selected
+    </span>
+    </div><br>
+
+    <!-- Vendor Name -->
+
+    <label for="vendorName">Vendor Name: <span style="color: red;">*</span></label><br>
+    <input type="text" id="vendorName" name="vendorName" placeholder="Enter vendor name"
+           style="width: 300px;" onkeyup="searchVendor()" >
+    <div id="vendorSuggestions" class="suggestions"></div>
+
+    <!-- Billing Table -->
+     <table id="purchaseTable">
+        <thead>
+            <tr>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price per Unit</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr id="templateRow" style="display:none;">
+                <input type="hidden" name="productId[]">
+             <td><input type="text" name="itemCode[]" placeholder="Code" readonly></td>
+             <td>
+                <input type="text" name="itemName[]" placeholder="Product name" onkeyup="searchProducts(this)">
+                <div  class="suggestions" required></div>
+            </td>
+            <td><input type="number" min="0" step="any" name="quantity[]" placeholder="0" onkeypress="if (['-','e','E'].includes(event.key)) event.preventDefault();"  oninput="updateRowTotal(this)" required></td>
+             <td><input type="number" name="pricePerUnit[]" placeholder="0.00" step="0.01" oninput="updateRowTotal(this)"></td>
+            <td><input type="text" name="total[]" placeholder="0.00" readonly></td>
+            <td><button type="button" class="delete-row-btn" onclick="deleteRow(this)">Delete</button></td>
+
+            </tr>
+        </tbody>
+     </table>
+     <!-- Add Row Button -->
+    <button type="button" id="addButton" onclick="addRow()">+ Add Product</button>
+</div>
+
+<div id="totals">
+    <p>Subtotal   : ₹<span id="subtotal">0.00</span></p>
+    <p>GST (10%)  : ₹<span id="gst">0.00</span></p>
+    <p>Grand Total: ₹<span id="grandTotal">0.00</span></p>
+    <button type="button" id="generateBtn" >Create Bill</button>
+</div>
+
+<button class="back-button" onclick="window.location.href='/home'">Back</button>
+
+<script th:src="@{/js/purchaseBilling.js}" defer></script>
+<script src="/js/common.js"></script>
+</body>
+</html>

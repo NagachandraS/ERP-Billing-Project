@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reports Dashboard</title>
+    <!DOCTYPE html>
+
+    <!DOCTYPE html>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Liter Statement</title>
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/reports.css">
+
+    </head>
+    <body>
+
+    <header>
+        Liter Statement
+    </header>
+
+    <div class="container">
+        <h2>Liter Statement</h2>
+
+        <!-- Filter Section -->
+        <form th:action="@{/Reports/LiterStatement/LSReport}" method="get">
+
+            <label for="fromDate">From Date:</label>
+            <input type="date"
+                   id="fromDate"
+                   name="fromDate"
+                   required>
+
+            <label for="toDate">To Date:</label>
+            <input type="date"
+                   id="toDate"
+                   name="toDate"
+                   required>
+
+            <button type="submit">
+                Generate Report
+            </button>
+
+        </form>
+
+        <hr>
+
+        <!-- Report Header -->
+        <div class="report-summary">
+
+            <p>
+                <strong>From Date:</strong>
+                <span th:text="${fromDate}"></span>
+            </p>
+
+            <p>
+                <strong>To Date:</strong>
+                <span th:text="${toDate}"></span>
+            </p>
+
+            <p>
+                <strong>Opening Balance (OB):</strong>
+                <span th:text="${openingBalance}"></span> L
+            </p>
+
+        </div>
+
+        <!-- Transaction Grid -->
+        <table>
+
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Reference No</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Litres</th>
+                <th>Closing Balance (CB)</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="row : ${report}">
+
+                <td th:text="${row.date}"></td>
+
+                <td th:text="${row.referenceNumber}"></td>
+
+                <td th:text="${row.productName}"></td>
+
+                <td th:text="${row.quantity}"></td>
+
+                <td th:text="${row.liters}"></td>
+
+                <td th:text="${row.closingBalance}"></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <!-- Footer Summary -->
+        <div class="report-summary">
+
+            <p>
+                <strong>Closing Balance (CB):</strong>
+                <span th:text="${report != null && !report.isEmpty() ? report[0].monthlyClosingBalance : '0.00'}">0.00</span> L
+            </p>
+
+        </div>
+
+        <div class="button-group">
+            <button type="button"
+                    onclick="window.history.back()">
+                Back
+            </button>
+
+            <button type="button"
+                    onclick="window.print()">
+                Print
+            </button>
+        </div>
+
+    </div>
+
+    </body>
+    </html>
+
+</html>

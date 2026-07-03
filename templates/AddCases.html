@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Cases</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/AddVendor.css">
+</head>
+<body>
+
+<header>Add Cases</header>
+
+<form th:action="@{/cases/save}" th:object="${cases}" method="post">
+    <label for="name">Case Name</label>
+    <input id="name" type="text" th:field="*{packageName}" required />
+
+    <label for="bottleNumbers">Number of bottles in a case</label>
+    <input id="bottleNumbers" type="text" th:field="*{bottlesInNumber}" required />
+
+    <button onclick="window.location.href='/home'" type="button">Back</button>
+    <button type="submit" onclick="window.location.href='/home'">Save Case</button>
+</form>
+<script src="/js/common.js"></script>
+</body>
+</html>

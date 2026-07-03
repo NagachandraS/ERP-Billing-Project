@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Movement Report</title>
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+
+<header>
+    Stock Movement Report
+</header>
+
+<main>
+    <form id="reportForm" th:action="@{/Reports/StockMovement/SMReport}">
+        <h1>Report Generator</h1>
+
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" name="fromDate" required>
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" name="toDate" required>
+
+        <div class="button-group">
+            <button type="submit">Generate Report</button>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Invoice Details</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/viewInvoiceDetails.css">
+</head>
+
+<body>
+
+<h2>Invoice Details</h2>
+
+<div style="width:90%; margin:0 auto;">
+    <p>
+        <strong>Customer Name:</strong>
+        <span th:text="${invoiceDetails.invoiceViewHeaderDTO.customerName}"></span>
+    </p>
+
+    <p>
+        <strong>Invoice Number:</strong>
+        <span th:text="${invoiceDetails.invoiceViewHeaderDTO.invoiceID}"></span>
+    </p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="i : ${invoiceDetails.invoiceViewItemsDTO}">
+            <td th:text="${i.itemName}"></td>
+            <td th:text="${i.itemQuantity}"></td>
+            <td th:text="${i.itemQuantity*i.itemPrice}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <strong>GST:</strong>
+        <span th:text="${invoiceDetails.invoiceViewHeaderDTO.gst}"></span>
+    </p>
+
+    <p>
+        <strong>Grand Total:</strong>
+        <span th:text="${invoiceDetails.invoiceViewHeaderDTO.grandTotal}"></span>
+    </p>
+
+    <div class="buttons-container">
+        <button onclick="window.location.href='/viewInvoices'">Back</button>
+        <a th:href="@{/ViewInvoice/print/{id}(id=${invoiceDetails.invoiceViewHeaderDTO.invoiceID})}">
+            <button type="button">Print Bill</button>
+        </a>
+    </div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+</html>
