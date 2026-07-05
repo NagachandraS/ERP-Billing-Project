@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Invoice Details</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/viewPurchaseOrderDetails.css">
+</head>
+
+<body>
+
+<h2>Purchase Order Details</h2>
+
+<div style="width:90%; margin:0 auto;">
+    <p>
+        <strong>Vendor Name:</strong>
+        <span th:text="${purchaseOrderDetails.purchaseOrderViewHeaderDTO.vendorName}"></span>
+    </p>
+
+    <p>
+        <strong>Purchase Order Number:</strong>
+        <span th:text="${purchaseOrderDetails.purchaseOrderViewHeaderDTO.invoiceId}"></span>
+    </p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="i : ${purchaseOrderDetails.purchaseOrderViewItemsDTO}">
+            <td th:text="${i.itemName}"></td>
+            <td th:text="${i.itemPurchaseQuantity}"></td>
+            <td th:text="${i.itemPurchaseQuantity * i.itemPurchasePrice}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <strong>GST:</strong>
+        <span th:text="${purchaseOrderDetails.purchaseOrderViewHeaderDTO.gst}"></span>
+    </p>
+
+    <p>
+        <strong>Grand Total:</strong>
+        <span th:text="${purchaseOrderDetails.purchaseOrderViewHeaderDTO.grandTotal}"></span>
+    </p>
+
+    <div class="buttons-container">
+        <button onclick="window.location.href='/purchaseOrder/view'">Back</button>
+
+
+    </div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customers - Industrial Oil Billing</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/viewCustomer.css">
+</head>
+<body>
+<h1>All Customers</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.customerName}"></td>
+        <td th:text="${customer.customerPhoneNumber}"></td>
+        <td th:text="${customer.customerAddress}"></td>
+        <td th:text="${customer.customerEmail}"></td>
+        <td>
+            <button class="table-button"
+                    th:onclick="'window.location.href=\'/customers/edit/' + ${customer.customerId} + '\''">
+                Edit
+            </button>
+            <button class="table-button"
+                    th:onclick="|deleteCustomer(${customer.customerId})|">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<button class="back-button" th:onclick="window.location.href='/home'">Back</button>
+
+<script src="/js/customer.js"></script>
+<script src="/js/common.js"></script>
+</body>
+</html>

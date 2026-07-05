@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+<div class="glow-wrapper">
+
+    <!-- ONE continuous animated gradient border -->
+    <svg class="border-svg" viewBox="0 0 340 420" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2d5366"/>
+                <stop offset="100%" stop-color="#6DA5C0"/>
+            </linearGradient>
+        </defs>
+        <rect
+            x="2"
+            y="2"
+            width="336"
+            height="416"
+            rx="16"
+            ry="16"
+            class="border-path"
+            stroke="url(#border-gradient)"
+        />
+    </svg>
+
+    <!-- Login card -->
+    <div class="login-card">
+        <h2>Login to Continue</h2>
+
+        <form th:action="@{/home}" th:object="${users}" method="post">
+
+            <label>User name</label>
+            <input type="text" name="userName" required>
+
+            <label>Password</label>
+            <input type="password" name="passWord" required>
+
+            <button type="submit">Login</button>
+
+            <div class="links">
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <div th:if="${param.error}" class="error">
+                Invalid username or password
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+</html>

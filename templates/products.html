@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Industrial Oil – Products</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+
+<header>
+Industrial Oil
+</header>
+
+<nav>
+    <!-- navigation links to other pages -->
+    <a th:href="@{/home}">Home</a>
+    <a th:href="@{/customers}">Customers</a>
+    <a th:href="@{/products}">Products</a>
+    <a th:href="@{/billing}">Billing</a>
+    <a th:href="@{/viewInvoices}">View Invoices</a>
+</nav>
+
+<div class="content">
+    <h2>Products</h2>
+    <div class="buttons">
+    <!-- Buttons that go to Add and View product pages -->
+    <a class="button" th:href="@{/products/add}">Add Product</a>
+    <a class="button" th:href="@{/products/view}">View Products</a>
+    </div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+</html>

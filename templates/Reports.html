@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reports Dashboard</title>
+    <!DOCTYPE html>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Reports Dashboard</title>
+
+        ```
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/Reports.css">
+        ```
+
+    </head>
+    <body>
+
+    <header>
+        Reports
+    </header>
+
+    <div class="reports-container">
+
+        ```
+        <h2 class="reports-title">Sales & Inventory Reports</h2>
+
+        <div class="reports-grid">
+
+            <!-- Daily Reports -->
+            <div class="report-section">
+
+                <h3>📊 Daily Reports</h3>
+
+                <div class="report-links">
+
+                    <a class="report-link"
+                       th:href="@{/Reports/DailySales}">
+                        Daily Sales Report
+                    </a>
+
+                    <a class="report-link"
+                       th:href="@{/Reports/DailySalesByProducts}">
+                        Product Wise Daily Sales Report
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Stock Reports -->
+            <div class="report-section">
+
+                <h3>📦 Stock Reports</h3>
+
+                <div class="report-links">
+
+                    <a class="report-link"
+                       th:href="@{/Reports/CurrentStocks}">
+                        Current Stock Report
+                    </a>
+
+                    <a class="report-link"
+                       th:href="@{/Reports/StockMovement}">
+                        Stock Movement Report
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Audit Reports -->
+            <div class="report-section">
+
+                <h3>📋 Audit Reports</h3>
+
+                <div class="report-links">
+
+                    <a class="report-link"
+                       th:href="@{/Reports/LiterStatement}">
+                        Liter Statement
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+        ```
+
+    </div>
+
+    <script src="/js/common.js"></script>
+
+</body>
+</html>

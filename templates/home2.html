@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Industrial Oil Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            margin:0;
+            background-color:#000000;
+        }
+
+        header{
+            background-color:#2d5366;
+            color:white;
+            padding:20px;
+            text-align:center;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        /* center layout */
+
+       .dashboard-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;   /* space between modules */
+    height:80vh;
+}
+
+        /* container */
+
+        .sales-container{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        /* label */
+
+        .sales-label{
+            color:white;
+            font-size:26px;
+            font-weight:bold;
+            margin-bottom:25px;
+        }
+
+        /* glowing box */
+
+        .sales-box{
+            width:300px;
+            height:300px;
+            border:6px solid #2d5366;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            gap:20px;
+
+            background:transparent;
+
+            /* glow effect */
+            box-shadow:
+                0 0 15px #2d5366,
+                0 0 40px #2d5366,
+                0 0 70px rgba(45,83,102,0.6);
+        }
+
+        /* buttons */
+
+        .sales-btn{
+            background-color:#6DA5C0;
+            color:white;
+            padding:10px 30px;
+            border-radius:10px;
+            width: 200px;
+            cursor:pointer;
+            font-weight:bold;
+            transition:0.3s;
+            gap: 10px;
+            
+        }
+
+        .sales-btn:hover{
+            background-color:#2d5366;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>Industrial Oil</header>
+
+<div class="dashboard-wrapper">
+
+    <div class="sales-container">
+
+        <div class="sales-label">Sales</div>
+
+        <div class="sales-box">
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/customers/view'">
+                Customers
+            </div>
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/billing'">
+                Sales Orders & Invoices
+            </div>
+            <div class="sales-btn"
+                 onclick="window.location.href='/billing'">
+                Sales & Customer Reports
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="sales-container">
+
+        <div class="sales-label">Purchase</div>
+
+        <div class="sales-box">
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/customers/view'">
+                Vendors
+            </div>
+
+            <div class="sales-btn" onclick="window.location.href='/billing'">
+                Purchase Orders & Invoices
+            </div>
+            <div class="sales-btn" onclick="window.location.href='/billing'">
+                Purchase & Vendor Reports
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="sales-container">
+
+        <div class="sales-label">Inventory</div>
+
+        <div class="sales-box">
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/customers/view'">
+                Products
+            </div>
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/billing'">
+                Stock Room
+            </div>
+            <div class="sales-btn"
+                 onclick="window.location.href='/billing'">
+                Stock and Products Reports
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="sales-container">
+
+        <div class="sales-label">Admin</div>
+
+        <div class="sales-box">
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/customers/view'">
+                Users
+            </div>
+
+            <div class="sales-btn"
+                 onclick="window.location.href='/billing'">
+                Manage Branches
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

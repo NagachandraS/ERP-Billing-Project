@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inventory</title>
+        <link rel="stylesheet" href="/css/Inventory.css">
+    </head>
+
+    <body>
+<h1>Inventory</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Code/SKU</th>
+            <th>Available Quantity</th>
+            <th>Min Quantity</th>
+            <th>UOM</th>
+            <th>Status</th>
+            <th>Add Stock</th>
+        </tr>
+    </thead>
+<tbody>
+
+<tr th:each="product : ${products}" >
+<td th:text="${product.productName}" ></td>
+<td th:text="${product.productName}"> </td>
+<td th:text="${product.productQuantity}"> </td>
+<td th:text=10> </td>
+<td th:text="${product.productName}">  </td>
+<td text="active"></td>
+<td><button>
+    Add Stock
+</button></td>
+</tr>
+
+</tbody>
+</table>
+
+
+<button class="back-button" th:onclick="window.location.href='/home'">Back</button>
+<script src="/js/common.js"></script>
+    </body>
+</html>

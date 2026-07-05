@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Sales Report</title>
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+
+<header>
+    Daily Sales Report
+</header>
+
+<main>
+    <form id="reportForm" th:action="@{/Reports/DailySales/DSReport}">
+        <h1>Report Generator</h1>
+
+        <label for="reportDate">Select Date:</label>
+        <input type="date" id="reportDate" name="reportDate" required>
+
+        <div class="button-group">
+            <button type="submit">Generate Report</button>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>
