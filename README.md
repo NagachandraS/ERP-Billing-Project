@@ -16,6 +16,8 @@ Current Phase : Testing in progress and post that needs to fix all of them
 
 Next Phase: Impementing Tally (Ledger Entry)
 
+**SAMPLE SCREENSHOTS**
+
 Inventory Screenshot:
 <img width="1896" height="826" alt="image" src="https://github.com/user-attachments/assets/40576e56-d900-45b8-a6fb-eaca5285e4d4" />
 
