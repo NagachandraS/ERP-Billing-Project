@@ -13,6 +13,7 @@ Features:
 9. Good usefull 5 reports
 
 Current Phase : Testing in progress and post that needs to fix all of them
+
 Next Phase: Impementing Tally (Ledger Entry)
 
 Inventory Screenshot:
