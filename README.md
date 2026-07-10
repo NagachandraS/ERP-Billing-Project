@@ -1,7 +1,23 @@
 # ERP-Billing-Project
 ERP project which helps user to run their business easy and efficient way
+
+Features:
+1. Add, Edit and view customers
+2. Add, Edit and view Vendors
+3. Add, Edit and view Products
+4. Create Sales Invoice
+5. Create Purchase Invoice
+6. Create Sales Return Invoice
+7. Create Purchase Return Invoice
+8. Maintain the Inventory
+9. Good usefull 5 reports
+
+Current Phase : Testing in progress and post that needs to fix all of them
+Next Phase: Impementing Tally (Ledger Entry)
+
+Inventory Screenshot:
 <img width="1896" height="826" alt="image" src="https://github.com/user-attachments/assets/40576e56-d900-45b8-a6fb-eaca5285e4d4" />
-Inventory screenshot, that automatically updates the stock quantity upon selling and Purchase activity
+
 
 Okay where do we Add product? To answer this question we have the Add product screen where user can add all products and enters the initial stock.
 <img width="746" height="832" alt="image" src="https://github.com/user-attachments/assets/a21ab08d-628f-44df-9ae5-f19f2651cceb" />
