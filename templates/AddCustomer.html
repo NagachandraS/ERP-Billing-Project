@@ -10,23 +10,31 @@
 
 <header>Add Customer</header>
 
-<form th:action="@{/customers/save}" th:object="${customers}" method="post">
+<!--<form id="customerForm" th:action="@{/customers/save}" th:object="${customers}" method="post"> -->
+    <form id="customerForm">
+    <label for="name" class="required">Name</label>
+    <input id="name" type="text"  autocomplete="name"  />
+    <div id="nameError" class="error-message"> </div>
 
-    <label for="name">Name</label>
-    <input id="name" type="text" th:field="*{customerName}" required />
-
-    <label for="phone">Phone Number</label>
-    <input id="phone" type="text" th:field="*{customerPhoneNumber}" required />
+    <label for="phone" class="required">Phone Number</label>
+    <input id="phone" type="text" autocomplete="tel"
+           maxlength="10"
+           inputmode="numeric"
+           oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+    <div id="phoneError" class="error-message"> </div>
 
     <label for="address">Address</label>
-    <input id="address" type="text" th:field="*{customerAddress}" required />
+    <input id="address" type="text"   autocomplete="street" />
 
     <label for="email">Email</label>
-    <input id="email" type="email" th:field="*{customerEmail}" required />
+    <input id="email" type="email" autocomplete="email" />
 
     <button onclick="window.location.href='/home'" type="button">Back</button>
-    <button type="submit" onclick="window.location.href='/home'">Save Customer</button>
+    <button type="submit">Save Customer</button>
 </form>
+<div id="toast"></div>
 <script src="/js/common.js"></script>
+<script src="/js/AddCustomer.js"></script>
+
 </body>
 </html>
