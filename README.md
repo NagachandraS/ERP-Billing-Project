@@ -50,6 +50,25 @@ Total also autocalculates and displays (each item row total + GST )
 Current GST is hardcoded to 10% of the subtotal (Dymanic GST calculation yet to be implemented)
 
 <img width="1912" height="631" alt="image" src="https://github.com/user-attachments/assets/9953ee1c-c2d5-4d3b-9a69-60aec00ea65b" />
+Once the invoice creation is successfull the Inventory gets updated with the latest quantity for the sold items/products
+(Sales: the quantity gets reduced)
+
+**Negative Cases for Invoice creation: **
+User cannot create the invoice with the hight quantity than the available stiock
+
+**Sales Return: **
+User can also perform and record the return scenario that he may encounter with his business
+
+Steps: 
+1. Search and select the invoice
+2. Auto populates the data of sold product
+3. Enter the returned quantity
+4. Confirm
+<img width="1900" height="602" alt="image" src="https://github.com/user-attachments/assets/3fa2e51d-27f8-4805-afa4-13220a19a839" />
 
 
+After the return the quantity updates in the invetory for the returned quantity
+(Sales Return: quantity gets added)
+
+Purchase: Same scenarios handled for the purchase business flow
 
