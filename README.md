@@ -1,7 +1,7 @@
-# ERP-Billing-Project
+<img width="1912" height="631" alt="image" src="https://github.com/user-attachments/assets/c0475288-795a-413b-94dc-4088c73e5ba2" /># ERP-Billing-Project
 ERP project which helps user to run their business easy and efficient way
 
-Features:
+**Features:**
 1. Add, Edit and view customers
 2. Add, Edit and view Vendors
 3. Add, Edit and view Products
@@ -12,9 +12,9 @@ Features:
 8. Maintain the Inventory
 9. Good usefull 5 reports
 
-Current Phase : Testing in progress and post that needs to fix all of them
+**Current Phase : **Testing in progress and post that needs to fix all of them
 
-Next Phase: Impementing Tally (Ledger Entry)
+**Next Phase:** Impementing Tally (Ledger Entry)
 
 **SAMPLE SCREENSHOTS**
 
@@ -32,20 +32,20 @@ It updates the customer billing amout etc....
 <img width="1901" height="503" alt="image" src="https://github.com/user-attachments/assets/558a40e0-898b-4855-9c5a-39983f74e972" />
 
 
-Searching the customer by customer Name:
+**Searching the customer by customer Name:**
 When user start typing the required customer name, the existing customer name starts populating based on the characters entere by the user
 
-Seaching the product Name: 
+**Seaching the product Name:** 
 User can search and select the product by
 1. Product Name
 2. Barcode (yet to be implemeneted)
 3 Product Code (yet to be implemeneted)
 
-Enetering the quantity: 
+**Enetering the quantity: **
 User can enetred the quanity and the calculation automatically updates to each row. 
 There is a master table where we have the data of price, available quantity etc. using that calculation auto updates in each of the row in the item grid
 
-Automatic total Calculation:
+**Automatic total Calculation:**
 Total also autocalculates and displays (each item row total + GST )
 Current GST is hardcoded to 10% of the subtotal (Dymanic GST calculation yet to be implemented)
 
