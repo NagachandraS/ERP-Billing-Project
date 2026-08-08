@@ -1,4 +1,4 @@
-<img width="1912" height="631" alt="image" src="https://github.com/user-attachments/assets/c0475288-795a-413b-94dc-4088c73e5ba2" /># ERP-Billing-Project
+# ERP-Billing-Project
 ERP project which helps user to run their business easy and efficient way
 
 **Features:**
